@@ -1,0 +1,13 @@
+Python >= 2.7
+	-jupyter
+	-rpy2
+	-plotly
+	-pandas
+	-numpy
+	-urllib2
+	-gzip
+	-sklearn
+
+R >= 3.0
+	-DESeq2
+	-limma

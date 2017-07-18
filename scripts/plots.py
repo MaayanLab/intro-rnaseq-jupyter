@@ -104,3 +104,6 @@ def plot_2d_scatter(x,y,text='', title='', xlab='x', ylab='y',color_by=None,colo
 	)
 	fig = go.Figure(data=data, layout=go.layout)
 	return iplot(fig)
+
+def get_clustergrammer_cats(sample_metadata_dataframe):
+	return [{'title': index, 'cats': {value: rowData[rowData==value].index.tolist() for value in set(rowData.values)}} for index, rowData in sample_metadata_dataframe.T.iterrows()]

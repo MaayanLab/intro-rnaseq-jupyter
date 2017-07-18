@@ -13,3 +13,5 @@ The pipeline described in the notebook consists of the following steps:
 
 ## Requirements
 To run the notebook, a stable installation of Python (>=2.7) and R (>=3.0) are required.  Some additional packages are required to run the pipeline, as shown in *requirements.txt*.
+
+A Python 2.7 virtual environment with the required packages is included within the repository (*venv.zip*).

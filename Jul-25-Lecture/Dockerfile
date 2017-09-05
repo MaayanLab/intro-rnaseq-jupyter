@@ -29,11 +29,9 @@ RUN Rscript -e 'source("https://bioconductor.org/biocLite.R"); biocLite("edgeR")
 
 RUN mkdir /lecture
 RUN mkdir /lecture/scripts
-RUN mkdir /root/.jupyter
-COPY config /root/.jupyter
 COPY *.ipynb /lecture/
 COPY scripts /lecture/scripts
 
 EXPOSE 8888
 
-CMD jupyter notebook --ip=0.0.0.0 --port=8888 --allow-root --no-browser --notebook-dir='/lecture' --NotebookApp.iopub_data_rate_limit=10000000000
+CMD jupyter notebook --ip=0.0.0.0 --port=8888 --allow-root --no-browser --notebook-dir='/lecture' --NotebookApp.iopub_data_rate_limit=10000000000 --NotebookApp.token=

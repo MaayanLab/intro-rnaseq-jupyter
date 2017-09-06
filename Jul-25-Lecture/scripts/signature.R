@@ -209,7 +209,7 @@ run_characteristic_direction <- function(rawcount_dataframe, design_dataframe, c
 	cd_results <- chdir(control_dataframe_filtered, experimental_dataframe_filtered, common_genes)
 
 	# Convert to dataframe
-	characteristic_direction_dataframe <- data.frame(CD=-cd_results)
+	characteristic_direction_dataframe <- data.frame(CD=cd_results)
 
 	# Return results
 	return(characteristic_direction_dataframe)
@@ -242,7 +242,7 @@ run_limma <- function(rawcount_dataframe, design_dataframe, adjust="BH") {
 	fit <- lmFit(v, design)
 
 	# Make contrast matrix
-	cont.matrix <- makeContrasts(de=control-experimental, levels=design)
+	cont.matrix <- makeContrasts(de=experimental-control, levels=design)
 
 	# Fit
 	fit2 <- contrasts.fit(fit, cont.matrix)
